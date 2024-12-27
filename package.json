@@ -1,0 +1,41 @@
+{
+  "name": "webpack-seal-analyzer",
+  "version": "1.0.0",
+  "description": "A webpack plugin that analyzes and visualizes the relationships between modules, chunks, and module graphs during the seal phase",
+  "main": "src/WebpackSealAnalyzerPlugin.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run lint",
+    "example": "cd example && npm install && npm run build"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "analyzer",
+    "modules",
+    "chunks",
+    "dependencies"
+  ],
+  "author": "DXM666 (https://github.com/DXM666)",
+  "license": "MIT",
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0",
+    "eslint": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DXM666/webpack-seal-analyzer"
+  },
+  "bugs": {
+    "url": "https://github.com/DXM666/webpack-seal-analyzer/issues"
+  },
+  "homepage": "https://github.com/DXM666/webpack-seal-analyzer#readme"
+}

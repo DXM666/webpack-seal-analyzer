@@ -1,0 +1,9 @@
+example/
+test/
+.gitignore
+.DS_Store
+*.log
+coverage/
+.idea/
+.vscode/
+webpack.config.js
