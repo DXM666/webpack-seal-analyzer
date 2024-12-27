@@ -7,7 +7,8 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "example"
   ],
   "scripts": {
     "build": "tsc",
@@ -19,7 +20,8 @@
     "test:watch": "jest --watch",
     "prepare": "husky install && npm run build",
     "pre-commit": "lint-staged",
-    "example": "cd example && npm install && npm run build"
+    "example": "cd example && npm install && npm run build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "webpack",
@@ -31,9 +33,18 @@
   ],
   "author": "DXM666 (https://github.com/DXM666)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DXM666/webpack-seal-analyzer"
+  },
+  "bugs": {
+    "url": "https://github.com/DXM666/webpack-seal-analyzer/issues"
+  },
+  "homepage": "https://github.com/DXM666/webpack-seal-analyzer#readme",
   "peerDependencies": {
     "webpack": "^5.0.0"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/webpack": "^5.28.5",
@@ -55,14 +66,6 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DXM666/webpack-seal-analyzer"
-  },
-  "bugs": {
-    "url": "https://github.com/DXM666/webpack-seal-analyzer/issues"
-  },
-  "homepage": "https://github.com/DXM666/webpack-seal-analyzer#readme",
   "lint-staged": {
     "*.{js,ts}": [
       "eslint --fix",
