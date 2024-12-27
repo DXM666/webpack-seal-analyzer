@@ -1,7 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Webpack插件，用于分析和可视化模块、chunks和依赖关系
+ * @typedef {Object} WebpackSealAnalyzerOptions
+ * @property {('html'|'markdown')} [outputFormat='html'] - 输出格式
+ * @property {string} [outputPath='dist'] - 输出目录路径
+ */
 class WebpackSealAnalyzerPlugin {
+    /**
+     * @param {WebpackSealAnalyzerOptions} [options]
+     */
     constructor(options = {}) {
         this.options = {
             outputFormat: options.outputFormat || 'html',
@@ -9,6 +18,9 @@ class WebpackSealAnalyzerPlugin {
         };
     }
 
+    /**
+     * @param {import('webpack').Compiler} compiler
+     */
     apply(compiler) {
         compiler.hooks.compilation.tap('WebpackSealAnalyzerPlugin', (compilation) => {
             compilation.hooks.afterSeal.tap('WebpackSealAnalyzerPlugin', () => {
@@ -33,6 +45,11 @@ class WebpackSealAnalyzerPlugin {
         });
     }
 
+    /**
+     * 收集编译过程中的分析数据
+     * @param {import('webpack').Compilation} compilation
+     * @returns {Object} 分析数据
+     */
     collectAnalysisData(compilation) {
         const data = {
             chunkGroups: [],
@@ -110,6 +127,11 @@ class WebpackSealAnalyzerPlugin {
         return data;
     }
 
+    /**
+     * 生成HTML格式的分析报告
+     * @param {Object} data - 分析数据
+     * @returns {string} HTML内容
+     */
     generateHTML(data) {
         return `
 <!DOCTYPE html>
@@ -240,6 +262,11 @@ class WebpackSealAnalyzerPlugin {
 </html>`;
     }
 
+    /**
+     * 生成Markdown格式的分析报告
+     * @param {Object} data - 分析数据
+     * @returns {string} Markdown内容
+     */
     generateMarkdown(data) {
         return `# Webpack Seal Analysis
 

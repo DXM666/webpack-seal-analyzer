@@ -1,5 +1,5 @@
 const path = require("path");
-const WebpackSealAnalyzerPlugin = require("../src/WebpackSealAnalyzerPlugin");
+const WebpackSealAnalyzerPlugin = require("../src/index");
 
 module.exports = {
   mode: "development",
