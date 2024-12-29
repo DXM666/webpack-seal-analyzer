@@ -1,5 +1,5 @@
 const path = require("path");
-const WebpackSealAnalyzerPlugin = require("../dist/index.cjs").default;
+const WebpackSealAnalyzerPlugin = require("../dist/index.cjs");
 
 module.exports = {
   mode: "development",
