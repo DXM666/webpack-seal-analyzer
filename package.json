@@ -1,6 +1,6 @@
 {
     "name": "webpack-seal-analyzer",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A webpack plugin that analyzes and visualizes the relationships between modules, chunks, and module graphs during the seal phase",
     "main": "dist/index.cjs",
     "module": "dist/index.mjs",
